@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Casinomeister tests">
+
+    <parameter name="userName" value="testng321"/>
+    <parameter name="email" value="wiorweprwerwe@gmail.com"/>
+    <parameter name="password" value="GetPractise006"/>
+    <parameter name="month" value="7"/>
+    <parameter name="day" value="27"/>
+    <parameter name="year" value="1987"/>
+    <parameter name="location" value="Hollywood"/>
+    <parameter name="country" value="Croatia"/>
+
+
+    <test name="Registration with valid data">
+        <classes>
+            <class name="tests.PractiseGetTests">
+                <methods>
+                    <include name="ValidRegister" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!--    username two digits-->
+    <test name="Registration with invalid data username two digits">
+        <parameter name="userName" value="vl"/>
+        <classes>
+            <class name="tests.PractiseGetTests">
+                <methods>
+                    <include name="InvalidRegister" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!--    username existing user  -->
+    <test name="Registration with invalid data username existing user">
+                <parameter name="userName" value="testing"/>
+        <classes>
+            <class name="tests.PractiseGetTests">
+                <methods>
+                    <include name="InvalidRegister" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!--    username empty  -->
+    <test name="Registration with invalid data username empty">
+        <parameter name="userName" value=""/>
+        <classes>
+            <class name="tests.PractiseGetTests">
+                <methods>
+                    <include name="InvalidRegister" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!--    email existing user  -->
+    <test name="Registration with invalid data email existing user">
+        <parameter name="email" value="lovacnz@gmail.com"/>
+        <classes>
+            <class name="tests.PractiseGetTests">
+                <methods>
+                    <include name="InvalidRegister" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!--    email empty  -->
+    <test name="Registration with invalid data email empty ">
+        <parameter name="email" value=""/>
+        <classes>
+            <class name="tests.PractiseGetTests">
+                <methods>
+                    <include name="InvalidRegister" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!--    password empty  -->
+    <test name="Registration with invalid data password empty">
+        <parameter name="password" value=""/>
+        <classes>
+            <class name="tests.PractiseGetTests">
+                <methods>
+                    <include name="InvalidRegister" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!--    birthdate 0  -->
+    <test name="Registration with invalid data birth date 0">
+        <parameter name="month" value="0"/>
+        <classes>
+            <class name="tests.PractiseGetTests">
+                <methods>
+                    <include name="InvalidRegister" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!--    birthday 35  -->
+    <test name="Registration with invalid data birth day 35">
+        <parameter name="day" value="35"/>
+        <classes>
+            <class name="tests.PractiseGetTests">
+                <methods>
+                    <include name="InvalidRegister" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!--    country empty  -->
+    <test name="Registration with invalid data country empty">
+        <parameter name="country" value=""/>
+        <classes>
+            <class name="tests.PractiseGetTests">
+                <methods>
+                    <include name="InvalidRegister" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+        <test name="ForumLogin">
+        <parameter name="password" value="Zidane05"/>
+        <parameter name="email" value="lovacnz@gmail.com"/>
+        <classes>
+            <class name="tests.PractiseGetTests">
+                <methods>
+                    <include name="LoginForum" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!--    verify visibility of sections in whats-new topic  -->
+    <test name="ForumTopics">
+        <parameter name="password" value="Zidane05"/>
+        <parameter name="email" value="lovacnz@gmail.com"/>
+        <classes>
+            <class name="tests.PractiseGetTests">
+                <methods>
+                    <include name="ForumTopicsCheck" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CheckSearch">
+        <parameter name="password" value="Zidane05"/>
+        <parameter name="email" value="lovacnz@gmail.com"/>
+        <parameter name="keyword" value="covid"/>
+        <classes>
+            <class name="tests.PractiseGetTests">
+                <methods>
+                    <include name="SearchCheck" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
